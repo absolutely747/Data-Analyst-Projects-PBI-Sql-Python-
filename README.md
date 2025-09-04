@@ -26,7 +26,7 @@ Portfolio project on **sample ecommerce data** showing end-to-end BI craft:
 ---
 
 ## 📸 Report Tour (screenshots)
-- `01-Overview.png`, `02-Sales.png`, `03-Customers.png`, `04-Returns.png`, `05-Products.png`, `06-Pipeline.png`, `07-Service-App.png`
+- `01-Overview.png`, `02-Sales.png`, `03-Customers.png`, `04-Returns.png`, `05-Products.png`
 
 
 
