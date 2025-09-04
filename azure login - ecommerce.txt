@@ -1,5 +1,0 @@
-azure login - ecommerce
-password- Newway7477@
-
-servername-sqlecom-siddhant
-location- central india
