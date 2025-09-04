@@ -1,0 +1,5 @@
+role OLS
+	modelPermission: read
+
+	annotation PBI_Id = 7c5496a0d7fb49bf9daf9dc6fe03691a
+

@@ -1,0 +1,100 @@
+table Date
+	lineageTag: f437b045-bde5-4509-9f61-3ee211f7149c
+	dataCategory: Time
+
+	column Date
+		isKey
+		formatString: Long Date
+		lineageTag: b6b51be8-0776-43d2-91d5-b787188d48d6
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Date]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Year
+		formatString: 0
+		lineageTag: 334a970d-2ab2-440c-a670-baf8998b905f
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Year]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Month
+		formatString: 0
+		lineageTag: 8d5dcc50-a250-41f9-a25a-43e765778c64
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Month]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Quarter
+		lineageTag: 5b0a82f4-b01d-4914-b6dd-a6ba725a5b4a
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Quarter]
+
+		annotation SummarizationSetBy = Automatic
+
+	column MonthName
+		lineageTag: 6e5e12d7-7f58-4b61-aeb2-500ea8a42dba
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [MonthName]
+		sortByColumn: Month
+
+		annotation SummarizationSetBy = Automatic
+
+	column YearMonth
+		lineageTag: 30aadb12-014c-4119-82f5-6becb5f44cca
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [YearMonth]
+		sortByColumn: MonthStart
+
+		annotation SummarizationSetBy = Automatic
+
+	column MonthStart =
+			
+			DATE ( YEAR ( 'Date'[Date] ), MONTH ( 'Date'[Date] ), 1 )
+		formatString: Long Date
+		lineageTag: c83947cc-ed15-4915-9a41-820f0f8766c7
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	partition Date = calculated
+		mode: import
+		source = ```
+				
+				var alldates=UNION(
+				                    SELECTCOLUMNS(vw_dim_customer,"d",vw_dim_customer[join_date]),
+				                    SELECTCOLUMNS(vw_fact_returns_clean,"d",vw_fact_returns_clean[return_day]),
+				                    SELECTCOLUMNS(vw_fact_order_items_clean,"d",vw_fact_order_items_clean[order_day])
+				)
+				
+				var startdate=MINX(alldates,[d])
+				var enddate=MAXX(alldates,[d])
+				RETURN
+				
+				ADDCOLUMNS(
+				    CALENDAR(startdate,enddate),
+				    "Year",YEAR([Date]),
+				    "Month",MONTH([Date]),
+				    "Quarter","Q" & QUARTER([Date]),
+				    "MonthName",FORMAT([Date],"MMM"),
+				    "YearMonth",FORMAT([Date],"yyyy MMM")
+				)
+				
+				    
+				
+				```
+
+	annotation PBI_Id = 93fd7aa4094d4ab1b6da0945f202399a
+

@@ -1,0 +1,36 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_QueryOrder = ["vw_dim_customer","vw_dim_products","vw_orders_clean","vw_fact_returns_clean","vw_fact_order_items_clean","ServerName","DatabaseName","RangeStart","RangeEnd","Security_UserRegion","Table","Append1"]
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+
+annotation PBIDesktopVersion = 2.146.1254.0 (25.08)+791a7518fadc83da883d79322a2658aff57c8db3
+
+annotation __TEdtr = 1
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table vw_dim_customer
+ref table vw_dim_products
+ref table vw_fact_order_items_clean
+ref table vw_fact_returns_clean
+ref table Date
+ref table MeasureTable
+ref table Dim_Region
+ref table AxisParameter
+ref table Table
+ref table Append1
+
+ref role RegionRLS
+ref role OLS
+ref role Nocost
+ref role EMEA
+
+ref cultureInfo en-US
+

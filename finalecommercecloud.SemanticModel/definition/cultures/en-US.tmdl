@@ -1,0 +1,95 @@
+cultureInfo en-US
+
+	linguisticMetadata =
+			{
+			  "Version": "2.0.0",
+			  "Language": "en-US",
+			  "Entities": {
+			    "measuretable.ytdpm": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "MeasureTable",
+			          "ConceptualProperty": "PreviousYearytd"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Sales LastYear": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "measuretable.total_sales": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "MeasureTable",
+			          "ConceptualProperty": "Total_Sales"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Total Sales": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "measuretable.discount_amount": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "MeasureTable",
+			          "ConceptualProperty": "Discount_Amount"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Total Discount": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "measuretable.total_refund_amount": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "MeasureTable",
+			          "ConceptualProperty": "Total_Refund_Amount"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Total Refund": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    }
+			  }
+			}
+		contentType: json
+

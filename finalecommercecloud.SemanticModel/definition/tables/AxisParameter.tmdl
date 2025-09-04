@@ -1,0 +1,49 @@
+table AxisParameter
+	lineageTag: 6e061fa1-6565-417b-a24c-626b90cb65f9
+
+	column AxisParameter
+		lineageTag: 947af135-6020-4d7e-8329-91c7cb6bb50c
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'AxisParameter Order'
+
+		relatedColumnDetails
+			groupByColumn: 'AxisParameter Fields'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'AxisParameter Fields'
+		lineageTag: 49982543-464d-4f35-9b26-c637cef28619
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'AxisParameter Order'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'AxisParameter Order'
+		formatString: 0
+		lineageTag: 46e36421-eb5d-4539-8a0d-6510fc661333
+		summarizeBy: sum
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition AxisParameter = calculated
+		mode: import
+		source = ```
+				{
+				    ("region", NAMEOF('Dim_Region'[region]), 0),
+				    ("subcategory", NAMEOF('vw_dim_products'[subcategory]), 1),
+				    ("category", NAMEOF('vw_dim_products'[category]), 2)
+				   
+				}
+				```
+
+	annotation PBI_Id = 6fc388cee538445785643176383feab7
+

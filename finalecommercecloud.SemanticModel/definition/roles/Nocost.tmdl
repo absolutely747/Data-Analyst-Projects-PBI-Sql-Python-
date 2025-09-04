@@ -1,0 +1,19 @@
+role Nocost
+	modelPermission: read
+
+	tablePermission vw_fact_order_items_clean
+
+	tablePermission MeasureTable
+		metadataPermission: none
+
+	tablePermission Dim_Region
+		metadataPermission: none
+
+	tablePermission Date
+		metadataPermission: none
+
+	tablePermission AxisParameter
+		metadataPermission: none
+
+	annotation PBI_Id = 28e04a5ddc7b460c8be635d092033059
+

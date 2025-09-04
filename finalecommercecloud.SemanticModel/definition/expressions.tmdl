@@ -1,0 +1,54 @@
+expression ServerName = "sqlecom-siddhant.database.windows.net" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: 3f0d9f2f-5ac8-49bd-97d2-768de3308472
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Text
+
+expression DatabaseName = "ecommerce" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: ab6bff7e-1bee-4093-9140-63221b7e7204
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Text
+
+expression vw_orders_clean =
+		let
+		    Source = Sql.Databases("sqlecom-siddhant.database.windows.net"),
+		    ecom_dev = Source{[Name="ecom_dev"]}[Data],
+		    dbo_vw_orders_clean = ecom_dev{[Schema="dbo",Item="vw_orders_clean"]}[Data]
+		in
+		    dbo_vw_orders_clean
+	lineageTag: 3d8f1cb4-9cb9-455d-9dca-232b0bba094c
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+expression RangeStart = #datetime(2022, 1, 1, 12, 0, 0) meta [IsParameterQuery=true, Type="DateTime", IsParameterQueryRequired=true]
+	lineageTag: bf6f36e9-22b4-491e-8ddf-2b9ac3c675a1
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = DateTime
+
+expression RangeEnd = #datetime(2026, 1, 1, 0, 0, 0) meta [IsParameterQuery=true, Type="DateTime", IsParameterQueryRequired=false]
+	lineageTag: c48416b1-23c1-464f-9fb2-507ac4164dde
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = DateTime
+
+expression Security_UserRegion =
+		let
+		    Source = Sql.Databases("sqlecom-siddhant.database.windows.net"),
+		    ecom_dev = Source{[Name="ecom_dev"]}[Data],
+		    dbo_Security_UserRegion = ecom_dev{[Schema="dbo",Item="Security_UserRegion"]}[Data]
+		in
+		    dbo_Security_UserRegion
+	lineageTag: 40e3ee88-e7f5-4b82-bbe2-9b55aa2ba6e3
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

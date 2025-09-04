@@ -1,0 +1,7 @@
+role EMEA
+	modelPermission: read
+
+	tablePermission Append1 = USERPRINCIPALNAME()=Append1[UPN]
+
+	annotation PBI_Id = 6501caa10eb748bd8ef42957e4641907
+

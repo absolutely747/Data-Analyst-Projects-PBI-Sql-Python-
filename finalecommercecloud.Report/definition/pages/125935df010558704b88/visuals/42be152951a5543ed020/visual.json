@@ -1,0 +1,67 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "name": "42be152951a5543ed020",
+  "position": {
+    "x": 219.02912621359224,
+    "y": 13.980582524271846,
+    "z": 2000,
+    "height": 48.932038834951456,
+    "width": 426.40776699029129,
+    "tabOrder": 1000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Customers Dashboard",
+                    "textStyle": {
+                      "fontSize": "20pt",
+                      "color": "#ad5129"
+                    }
+                  },
+                  {
+                    "value": ": ",
+                    "textStyle": {
+                      "fontSize": "20pt",
+                      "color": "#e66c37"
+                    }
+                  },
+                  {
+                    "value": "Urban Cart",
+                    "textStyle": {
+                      "fontFamily": "Comic Sans MS",
+                      "fontSize": "20pt",
+                      "color": "#573b92"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

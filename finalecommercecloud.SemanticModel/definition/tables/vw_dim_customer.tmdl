@@ -1,0 +1,84 @@
+table vw_dim_customer
+	lineageTag: d275a8be-1bec-454d-9f43-395b90aba8b9
+
+	column customer_key
+		dataType: int64
+		isNullable: false
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 8a050165-bb07-462d-a0ac-7a353bbf3a57
+		summarizeBy: none
+		sourceColumn: customer_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column full_name
+		dataType: string
+		isNullable: false
+		sourceProviderType: nvarchar(201)
+		lineageTag: 8e70fa16-cc33-432e-9c3d-310b49aeabcb
+		summarizeBy: none
+		sourceColumn: full_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column email
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 8fd84d08-7f3e-409a-9e66-3f2ed25f1b68
+		summarizeBy: none
+		sourceColumn: email
+
+		annotation SummarizationSetBy = Automatic
+
+	column region
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 0ead150b-3939-4c66-aa5f-dc6537330157
+		summarizeBy: none
+		sourceColumn: region
+
+		annotation SummarizationSetBy = Automatic
+
+	column join_date
+		dataType: dateTime
+		formatString: Long Date
+		sourceProviderType: date
+		lineageTag: 2f7998a0-b2e8-4a61-8a69-adef60e68ebb
+		summarizeBy: none
+		sourceColumn: join_date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column updated_at
+		dataType: dateTime
+		formatString: Long Date
+		sourceProviderType: date
+		lineageTag: 0432b614-214b-4b5d-9328-1b0a0b986aa4
+		summarizeBy: none
+		sourceColumn: updated_at
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	partition vw_dim_customer = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Databases("sqlecom-siddhant.database.windows.net"),
+				    ecom_dev = Source{[Name="ecom_dev"]}[Data],
+				    dbo_vw_dim_customer = ecom_dev{[Schema="dbo",Item="vw_dim_customer"]}[Data],
+				    #"Removed Columns" = Table.RemoveColumns(dbo_vw_dim_customer,{"first_name", "last_name"}),
+				    #"Reordered Columns" = Table.ReorderColumns(#"Removed Columns",{"customer_key", "full_name", "email", "region", "join_date", "updated_at"}),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Reordered Columns",{{"join_date", type date}, {"updated_at", type date}}),
+				    #"Trimmed Text" = Table.TransformColumns(#"Changed Type",{{"region", Text.Trim, type text}})
+				in
+				    #"Trimmed Text"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

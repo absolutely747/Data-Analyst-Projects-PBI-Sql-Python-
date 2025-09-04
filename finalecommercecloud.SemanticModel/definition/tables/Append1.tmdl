@@ -1,0 +1,31 @@
+table Append1
+	lineageTag: 02c720a3-8fb2-4116-9cef-50ac8528a9d8
+
+	column UPN
+		dataType: string
+		lineageTag: e4e39ebd-f401-4f8b-9abf-3f69f0860e5d
+		summarizeBy: none
+		sourceColumn: UPN
+
+		annotation SummarizationSetBy = Automatic
+
+	column Region
+		dataType: string
+		lineageTag: 3c53d85f-c1f6-463e-9787-34c10bf68d02
+		summarizeBy: none
+		sourceColumn: Region
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Append1 = m
+		mode: import
+		source =
+				let
+				    Source = Table.Combine({Table, Security_UserRegion})
+				in
+				    Source
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

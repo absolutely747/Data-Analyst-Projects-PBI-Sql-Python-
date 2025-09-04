@@ -1,0 +1,114 @@
+table vw_fact_returns_clean
+	lineageTag: 9d92662d-4146-4e5b-8ff6-ddb65bef0556
+
+	column order_item_id
+		dataType: int64
+		isNullable: false
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 6c924804-f46f-4da8-b4e7-ffc98359da73
+		summarizeBy: sum
+		sourceColumn: order_item_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_id
+		dataType: int64
+		isNullable: false
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: bc2d30a2-3a83-435c-8b74-11db342ed745
+		summarizeBy: sum
+		sourceColumn: order_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column product_id
+		dataType: int64
+		isNullable: false
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: f8967881-18c1-4e25-bb56-a32bb47cd8d7
+		summarizeBy: none
+		sourceColumn: product_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column qty_returned
+		dataType: int64
+		isNullable: false
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 288516ea-b53c-4682-a41e-27d8743bbb9e
+		summarizeBy: sum
+		sourceColumn: qty_returned
+
+		annotation SummarizationSetBy = Automatic
+
+	column refund_amount
+		dataType: double
+		isNullable: false
+		sourceProviderType: decimal(18, 2)
+		lineageTag: bd130a87-ccb7-4a8d-bb24-771c93b55a85
+		summarizeBy: sum
+		sourceColumn: refund_amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column reason
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 835b5aea-f194-4a8f-8097-83458298ea46
+		summarizeBy: none
+		sourceColumn: reason
+
+		annotation SummarizationSetBy = Automatic
+
+	column return_day
+		dataType: dateTime
+		formatString: Long Date
+		sourceProviderType: date
+		lineageTag: 993d626f-0bf7-4e39-bb26-e2752617021a
+		summarizeBy: none
+		sourceColumn: return_day
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column days_to_return
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 2fdb6b4b-f253-4a93-a42e-548b1ff882bd
+		summarizeBy: sum
+		sourceColumn: days_to_return
+
+		annotation SummarizationSetBy = Automatic
+
+	column days_to_refund
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 43a58f32-5f65-46f1-9c3e-d43b6c1e2b12
+		summarizeBy: sum
+		sourceColumn: days_to_refund
+
+		annotation SummarizationSetBy = Automatic
+
+	partition vw_fact_returns_clean = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Databases("sqlecom-siddhant.database.windows.net"),
+				    ecom_dev = Source{[Name="ecom_dev"]}[Data],
+				    dbo_vw_returns_clean = ecom_dev{[Schema="dbo",Item="vw_returns_clean"]}[Data]
+				in
+				    dbo_vw_returns_clean
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

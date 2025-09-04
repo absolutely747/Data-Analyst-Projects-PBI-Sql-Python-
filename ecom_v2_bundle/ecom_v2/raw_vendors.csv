@@ -1,0 +1,501 @@
+vendor_id,vendor_name,country
+1,Vendor 1,JP
+2,Vendor 2,IN
+3,Vendor 3,US
+4,Vendor 4,US
+5,Vendor 5,JP
+6,Vendor  6,GB
+7, Vendor 7 ,CN
+8,Vendor 8,IN
+9, Vendor 9 ,AE
+10,Vendor  10,IN
+11,Vendor 11,CN
+12, Vendor 12 ,DE
+13,Vendor 13,SG
+14,Vendor 14,CN
+15,Vendor 15,US
+16, Vendor 16 ,CN
+17, Vendor 17 ,GB
+18,Vendor 18,US
+19,Vendor 19,IN
+20,Vendor 20,CN
+21,Vendor 21,IN
+22, Vendor 22 ,JP
+23,Vendor  23,GB
+24,Vendor 24,US
+25, Vendor 25 ,DE
+26,Vendor 26,JP
+27,Vendor 27,CN
+28,Vendor 28,JP
+29, Vendor 29 ,IN
+30,Vendor 30,US
+31,Vendor 31,DE
+32,Vendor 32,JP
+33,Vendor 33,SG
+34,Vendor 34,IN
+35,Vendor 35,IN
+36,Vendor 36,GB
+37,Vendor 37,US
+38,Vendor 38,IN
+39,Vendor 39,DE
+40,Vendor 40,US
+41, Vendor 41 ,SG
+42,Vendor 42,DE
+43,Vendor 43,GB
+44,Vendor 44,IN
+45, Vendor 45 ,SG
+46,Vendor 46,SG
+47,Vendor 47,SG
+48,Vendor 48,CN
+49,Vendor 49,IN
+50, Vendor 50 ,JP
+51, Vendor 51 ,CN
+52,Vendor 52,DE
+53,Vendor 53,US
+54,Vendor 54,IN
+55,Vendor 55,GB
+56,Vendor 56,JP
+57,Vendor 57,DE
+58, Vendor 58 ,SG
+59,Vendor 59,CN
+60,Vendor 60,IN
+61,Vendor 61,IN
+62,Vendor 62,CN
+63,Vendor 63,CN
+64,Vendor 64,JP
+65,Vendor 65,JP
+66,Vendor 66,IN
+67,Vendor 67,GB
+68,Vendor 68,IN
+69, Vendor 69 ,US
+70,Vendor 70,IN
+71,Vendor 71,AE
+72, Vendor 72 ,IN
+73,Vendor  73,AE
+74,Vendor 74,JP
+75, Vendor 75 ,IN
+76,Vendor 76,IN
+77,Vendor 77,IN
+78, Vendor 78 ,CN
+79,Vendor 79,IN
+80,Vendor 80,IN
+81, Vendor 81 ,DE
+82,Vendor 82,US
+83,Vendor 83,DE
+84,Vendor 84,DE
+85,Vendor  85,IN
+86, Vendor 86 ,CN
+87,Vendor 87,SG
+88,Vendor 88,CN
+89,Vendor 89,IN
+90, Vendor 90 ,IN
+91,Vendor 91,CN
+92,Vendor 92,GB
+93,Vendor 93,DE
+94,Vendor 94,IN
+95,Vendor 95,GB
+96,Vendor 96,JP
+97,Vendor 97,IN
+98,Vendor 98,CN
+99, Vendor 99 ,CN
+100,Vendor 100,SG
+101,Vendor  101,JP
+102,Vendor  102,IN
+103,Vendor 103,JP
+104,Vendor 104,IN
+105,Vendor 105,CN
+106,Vendor 106,CN
+107,Vendor 107,DE
+108, Vendor 108 ,IN
+109,Vendor  109,US
+110,Vendor  110,IN
+111,Vendor 111,CN
+112, Vendor 112 ,DE
+113,Vendor 113,IN
+114,Vendor 114,CN
+115,Vendor 115,IN
+116, Vendor 116 ,US
+117, Vendor 117 ,SG
+118,Vendor 118,US
+119,Vendor 119,IN
+120,Vendor 120,IN
+121,Vendor 121,JP
+122,Vendor 122,CN
+123, Vendor 123 ,IN
+124, Vendor 124 ,IN
+125,Vendor  125,IN
+126,Vendor 126,IN
+127,Vendor 127,JP
+128,Vendor  128,IN
+129, Vendor 129 ,IN
+130,Vendor 130,DE
+131,Vendor 131,CN
+132,Vendor  132,IN
+133,Vendor 133,CN
+134,Vendor 134,CN
+135,Vendor 135,IN
+136,Vendor 136,US
+137,Vendor 137,IN
+138,Vendor  138,GB
+139,Vendor 139,US
+140,Vendor 140,SG
+141, Vendor 141 ,US
+142,Vendor 142,JP
+143, Vendor 143 ,DE
+144,Vendor  144,CN
+145,Vendor 145,CN
+146,Vendor 146,IN
+147,Vendor 147,US
+148,Vendor  148,IN
+149,Vendor 149,JP
+150,Vendor 150,CN
+151,Vendor 151,IN
+152,Vendor 152,IN
+153, Vendor 153 ,GB
+154,Vendor 154,US
+155,Vendor 155,CN
+156,Vendor 156,IN
+157,Vendor 157,US
+158,Vendor 158,SG
+159, Vendor 159 ,SG
+160, Vendor 160 ,GB
+161,Vendor 161,US
+162, Vendor 162 ,SG
+163,Vendor 163,AE
+164,Vendor 164,DE
+165, Vendor 165 ,IN
+166,Vendor 166,IN
+167,Vendor 167,SG
+168,Vendor 168,SG
+169,Vendor 169,IN
+170,Vendor 170,US
+171,Vendor 171,IN
+172,Vendor 172,IN
+173,Vendor 173,IN
+174, Vendor 174 ,JP
+175,Vendor 175,CN
+176, Vendor 176 ,IN
+177,Vendor  177,GB
+178, Vendor 178 ,GB
+179,Vendor 179,CN
+180,Vendor 180,CN
+181,Vendor 181,IN
+182,Vendor 182,AE
+183,Vendor 183,IN
+184,Vendor  184,IN
+185,Vendor 185,IN
+186,Vendor 186,CN
+187,Vendor 187,IN
+188,Vendor  188,JP
+189,Vendor 189,US
+190,Vendor  190,US
+191,Vendor 191,IN
+192, Vendor 192 ,US
+193,Vendor 193,CN
+194,Vendor 194,US
+195,Vendor 195,SG
+196,Vendor 196,IN
+197,Vendor 197,US
+198,Vendor 198,SG
+199,Vendor 199,IN
+200,Vendor 200,IN
+201,Vendor 201,IN
+202, Vendor 202 ,US
+203,Vendor 203,IN
+204,Vendor 204,CN
+205,Vendor 205,DE
+206,Vendor 206,IN
+207,Vendor  207,IN
+208,Vendor 208,SG
+209,Vendor 209,US
+210,Vendor 210,IN
+211, Vendor 211 ,SG
+212,Vendor 212,CN
+213,Vendor  213,IN
+214,Vendor 214,DE
+215,Vendor 215,CN
+216, Vendor 216 ,IN
+217,Vendor 217,IN
+218,Vendor 218,IN
+219,Vendor 219,CN
+220,Vendor  220,AE
+221,Vendor 221,DE
+222,Vendor 222,GB
+223,Vendor 223,DE
+224,Vendor 224,IN
+225,Vendor 225,AE
+226,Vendor 226,IN
+227,Vendor 227,DE
+228,Vendor 228,IN
+229,Vendor 229,CN
+230,Vendor 230,GB
+231,Vendor 231,AE
+232,Vendor 232,IN
+233,Vendor 233,IN
+234,Vendor 234,IN
+235, Vendor 235 ,CN
+236,Vendor 236,IN
+237,Vendor 237,JP
+238,Vendor 238,IN
+239,Vendor 239,CN
+240,Vendor  240,IN
+241,Vendor 241,US
+242,Vendor 242,IN
+243,Vendor 243,IN
+244,Vendor 244,IN
+245,Vendor 245,JP
+246,Vendor 246,IN
+247,Vendor 247,IN
+248, Vendor 248 ,US
+249,Vendor 249,US
+250,Vendor 250,IN
+251,Vendor 251,CN
+252,Vendor 252,IN
+253,Vendor 253,CN
+254,Vendor 254,GB
+255,Vendor  255,IN
+256,Vendor 256,IN
+257,Vendor 257,US
+258,Vendor 258,DE
+259,Vendor 259,IN
+260, Vendor 260 ,JP
+261, Vendor 261 ,AE
+262,Vendor 262,CN
+263,Vendor 263,CN
+264,Vendor 264,IN
+265,Vendor 265,CN
+266,Vendor 266,GB
+267,Vendor 267,IN
+268,Vendor 268,IN
+269,Vendor 269,GB
+270, Vendor 270 ,CN
+271,Vendor 271,IN
+272,Vendor 272,CN
+273, Vendor 273 ,IN
+274,Vendor 274,JP
+275,Vendor 275,GB
+276,Vendor 276,AE
+277,Vendor 277,IN
+278,Vendor 278,CN
+279,Vendor 279,IN
+280,Vendor 280,JP
+281,Vendor 281,DE
+282,Vendor 282,JP
+283,Vendor 283,CN
+284,Vendor  284,CN
+285,Vendor  285,DE
+286,Vendor 286,SG
+287, Vendor 287 ,DE
+288,Vendor 288,US
+289,Vendor 289,IN
+290,Vendor 290,IN
+291,Vendor 291,IN
+292, Vendor 292 ,CN
+293,Vendor 293,IN
+294,Vendor 294,IN
+295,Vendor 295,JP
+296,Vendor  296,CN
+297,Vendor 297,IN
+298, Vendor 298 ,IN
+299, Vendor 299 ,IN
+300,Vendor 300,JP
+301,Vendor 301,IN
+302, Vendor 302 ,SG
+303, Vendor 303 ,GB
+304,Vendor  304,IN
+305,Vendor 305,JP
+306,Vendor  306,SG
+307,Vendor 307,IN
+308,Vendor 308,CN
+309,Vendor 309,GB
+310,Vendor 310,IN
+311,Vendor 311,IN
+312,Vendor 312,CN
+313,Vendor 313,IN
+314,Vendor 314,CN
+315,Vendor 315,CN
+316,Vendor 316,CN
+317, Vendor 317 ,GB
+318,Vendor 318,JP
+319,Vendor 319,DE
+320,Vendor 320,JP
+321,Vendor 321,IN
+322,Vendor 322,IN
+323, Vendor 323 ,US
+324,Vendor 324,GB
+325,Vendor 325,SG
+326,Vendor 326,CN
+327,Vendor 327,IN
+328,Vendor 328,US
+329,Vendor  329,DE
+330,Vendor 330,US
+331,Vendor 331,IN
+332, Vendor 332 ,CN
+333,Vendor 333,IN
+334,Vendor 334,SG
+335,Vendor 335,IN
+336,Vendor  336,IN
+337,Vendor 337,IN
+338,Vendor 338,CN
+339,Vendor  339,IN
+340, Vendor 340 ,US
+341, Vendor 341 ,IN
+342,Vendor  342,GB
+343,Vendor 343,CN
+344,Vendor 344,SG
+345,Vendor  345,DE
+346,Vendor 346,SG
+347,Vendor 347,IN
+348,Vendor 348,IN
+349,Vendor 349,CN
+350, Vendor 350 ,IN
+351,Vendor 351,IN
+352,Vendor 352,SG
+353,Vendor 353,JP
+354,Vendor 354,GB
+355,Vendor  355,JP
+356,Vendor 356,IN
+357,Vendor 357,GB
+358,Vendor 358,IN
+359, Vendor 359 ,IN
+360,Vendor 360,IN
+361,Vendor 361,DE
+362,Vendor 362,IN
+363,Vendor 363,IN
+364, Vendor 364 ,SG
+365,Vendor 365,US
+366,Vendor 366,CN
+367,Vendor 367,IN
+368,Vendor 368,IN
+369,Vendor 369,US
+370,Vendor  370,CN
+371,Vendor 371,IN
+372,Vendor 372,IN
+373,Vendor 373,IN
+374,Vendor 374,IN
+375, Vendor 375 ,US
+376,Vendor 376,US
+377,Vendor 377,DE
+378,Vendor 378,IN
+379, Vendor 379 ,IN
+380,Vendor 380,US
+381,Vendor 381,JP
+382,Vendor 382,GB
+383, Vendor 383 ,US
+384,Vendor  384,IN
+385, Vendor 385 ,IN
+386, Vendor 386 ,IN
+387,Vendor 387,IN
+388,Vendor 388,DE
+389,Vendor 389,CN
+390,Vendor 390,CN
+391, Vendor 391 ,IN
+392,Vendor 392,JP
+393,Vendor 393,IN
+394,Vendor 394,IN
+395, Vendor 395 ,IN
+396,Vendor 396,IN
+397,Vendor 397,US
+398,Vendor 398,IN
+399,Vendor 399,IN
+400,Vendor 400,AE
+401,Vendor 401,IN
+402, Vendor 402 ,AE
+403,Vendor  403,CN
+404,Vendor 404,DE
+405,Vendor 405,SG
+406,Vendor 406,GB
+407,Vendor 407,IN
+408,Vendor 408,CN
+409, Vendor 409 ,US
+410,Vendor 410,DE
+411, Vendor 411 ,IN
+412,Vendor 412,CN
+413,Vendor 413,IN
+414,Vendor 414,SG
+415,Vendor 415,US
+416,Vendor 416,CN
+417, Vendor 417 ,CN
+418,Vendor 418,AE
+419,Vendor  419,SG
+420,Vendor 420,DE
+421,Vendor 421,DE
+422,Vendor 422,IN
+423, Vendor 423 ,AE
+424, Vendor 424 ,IN
+425,Vendor 425,IN
+426,Vendor 426,IN
+427, Vendor 427 ,JP
+428,Vendor 428,IN
+429,Vendor  429,CN
+430, Vendor 430 ,DE
+431,Vendor 431,IN
+432,Vendor 432,SG
+433,Vendor 433,IN
+434,Vendor  434,IN
+435,Vendor 435,CN
+436,Vendor 436,JP
+437,Vendor 437,CN
+438,Vendor 438,IN
+439, Vendor 439 ,IN
+440,Vendor 440,IN
+441,Vendor 441,IN
+442,Vendor 442,CN
+443,Vendor 443,IN
+444,Vendor 444,JP
+445,Vendor  445,JP
+446,Vendor 446,CN
+447,Vendor 447,DE
+448,Vendor  448,DE
+449,Vendor  449,IN
+450,Vendor 450,DE
+451,Vendor 451,DE
+452,Vendor 452,US
+453, Vendor 453 ,IN
+454,Vendor 454,CN
+455, Vendor 455 ,IN
+456,Vendor 456,IN
+457,Vendor 457,JP
+458, Vendor 458 ,CN
+459,Vendor 459,SG
+460, Vendor 460 ,IN
+461,Vendor 461,US
+462,Vendor 462,IN
+463,Vendor 463,US
+464,Vendor 464,IN
+465,Vendor 465,IN
+466,Vendor 466,IN
+467,Vendor 467,JP
+468,Vendor 468,US
+469, Vendor 469 ,CN
+470,Vendor  470,IN
+471,Vendor 471,SG
+472,Vendor 472,IN
+473,Vendor  473,DE
+474,Vendor 474,IN
+475,Vendor 475,JP
+476,Vendor 476,DE
+477,Vendor 477,US
+478,Vendor 478,IN
+479,Vendor 479,CN
+480,Vendor 480,IN
+481,Vendor 481,IN
+482,Vendor 482,IN
+483,Vendor 483,IN
+484,Vendor 484,IN
+485,Vendor 485,JP
+486,Vendor 486,IN
+487,Vendor 487,IN
+488, Vendor 488 ,SG
+489,Vendor 489,CN
+490,Vendor 490,US
+491,Vendor 491,CN
+492,Vendor 492,IN
+493,Vendor 493,JP
+494,Vendor 494,IN
+495,Vendor 495,CN
+496,Vendor  496,JP
+497, Vendor 497 ,JP
+498,Vendor 498,GB
+499,Vendor 499,CN
+500,Vendor  500,IN

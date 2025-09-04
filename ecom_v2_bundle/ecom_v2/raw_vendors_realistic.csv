@@ -1,0 +1,501 @@
+vendor_id,vendor_name,country
+1,Apple Official Store,GB
+2,Apple Authorised,US
+3,Samsung Official Store,AE
+4,Samsung Authorised,IN
+5,Xiaomi Official Store,GB
+6,Xiaomi Authorised,CN
+7,OnePlus Official Store,GB
+8,OnePlus Authorised,IN
+9,Sony Official Store,CN
+10,Sony Authorised,CN
+11,LG Official Store,US
+12,LG Authorised,US
+13,Philips Official Store,US
+14,Philips Authorised,IN
+15,Panasonic Official Store,AE
+16,Panasonic Authorised,GB
+17,TCL Official Store,SG
+18,TCL Authorised,IN
+19,Vivo Official Store,SG
+20,Vivo Authorised,IN
+21,Oppo Official Store,JP
+22,Oppo Authorised,AE
+23,Realme Official Store,SG
+24,Realme Authorised,JP
+25,Motorola Official Store,AE
+26,Motorola Authorised,IN
+27,Nokia Official Store,CN
+28,Nokia Authorised,IN
+29,Google Official Store,CN
+30,Google Authorised,CN
+31,Dell Official Store,US
+32,Dell Authorised,US
+33,HP Official Store,IN
+34,HP Authorised,DE
+35,Lenovo Official Store,IN
+36,Lenovo Authorised,IN
+37,Asus Official Store,IN
+38,Asus Authorised,US
+39,Acer Official Store,CN
+40,Acer Authorised,IN
+41,MSI Official Store,IN
+42,MSI Authorised,IN
+43,Razer Official Store,JP
+44,Razer Authorised,IN
+45,Gigabyte Official Store,SG
+46,Gigabyte Authorised,IN
+47,Logitech Official Store,IN
+48,Logitech Authorised,GB
+49,Microsoft Official Store,CN
+50,Microsoft Authorised,CN
+51,AmazonBasics Official Store,JP
+52,AmazonBasics Authorised,IN
+53,Anker Official Store,AE
+54,Anker Authorised,IN
+55,Canon Official Store,CN
+56,Canon Authorised,IN
+57,Nikon Official Store,IN
+58,Nikon Authorised,CN
+59,GoPro Official Store,IN
+60,GoPro Authorised,AE
+61,Bose Official Store,IN
+62,Bose Authorised,SG
+63,JBL Official Store,IN
+64,JBL Authorised,US
+65,Sennheiser Official Store,IN
+66,Sennheiser Authorised,IN
+67,Boat Official Store,CN
+68,Boat Authorised,CN
+69,Beats Official Store,IN
+70,Beats Authorised,IN
+71,Skullcandy Official Store,IN
+72,Skullcandy Authorised,IN
+73,Corsair Official Store,IN
+74,Corsair Authorised,US
+75,Kingston Official Store,US
+76,Kingston Authorised,IN
+77,SanDisk Official Store,IN
+78,SanDisk Authorised,US
+79,Seagate Official Store,CN
+80,Seagate Authorised,IN
+81,Western Digital Official Store,US
+82,Western Digital Authorised,CN
+83,TP-Link Official Store,JP
+84,TP-Link Authorised,IN
+85,Netgear Official Store,IN
+86,Netgear Authorised,IN
+87,D-Link Official Store,US
+88,D-Link Authorised,IN
+89,NVIDIA Official Store,IN
+90,NVIDIA Authorised,IN
+91,AMD Official Store,IN
+92,AMD Authorised,AE
+93,Intel Official Store,IN
+94,Intel Authorised,IN
+95,Bosch Official Store,IN
+96,Bosch Authorised,CN
+97,Whirlpool Official Store,SG
+98,Whirlpool Authorised,US
+99,IFB Official Store,IN
+100,IFB Authorised,IN
+101,Haier Official Store,IN
+102,Haier Authorised,JP
+103,Voltas Official Store,IN
+104,Voltas Authorised,GB
+105,Blue Star Official Store,IN
+106,Blue Star Authorised,US
+107,Crompton Official Store,IN
+108,Crompton Authorised,GB
+109,Havells Official Store,IN
+110,Havells Authorised,IN
+111,Dyson Official Store,IN
+112,Dyson Authorised,CN
+113,iRobot Official Store,CN
+114,iRobot Authorised,IN
+115,Usha Official Store,CN
+116,Usha Authorised,IN
+117,Prestige Official Store,US
+118,Prestige Authorised,CN
+119,Hawkins Official Store,CN
+120,Hawkins Authorised,IN
+121,Pigeon Official Store,IN
+122,Pigeon Authorised,IN
+123,Philips Kitchen Official Store,CN
+124,Philips Kitchen Authorised,CN
+125,Nike Official Store,JP
+126,Nike Authorised,US
+127,Adidas Official Store,GB
+128,Adidas Authorised,IN
+129,Puma Official Store,CN
+130,Puma Authorised,IN
+131,Reebok Official Store,CN
+132,Reebok Authorised,IN
+133,Levis Official Store,IN
+134,Levis Authorised,IN
+135,H&M Official Store,IN
+136,H&M Authorised,JP
+137,Zara Official Store,DE
+138,Zara Authorised,US
+139,Uniqlo Official Store,IN
+140,Uniqlo Authorised,SG
+141,Woodland Official Store,GB
+142,Woodland Authorised,IN
+143,Bata Official Store,IN
+144,Bata Authorised,JP
+145,Loreal Official Store,AE
+146,Loreal Authorised,IN
+147,Nivea Official Store,JP
+148,Nivea Authorised,IN
+149,Lakme Official Store,US
+150,Lakme Authorised,IN
+151,Himalaya Official Store,JP
+152,Himalaya Authorised,IN
+153,Dove Official Store,IN
+154,Dove Authorised,CN
+155,Garnier Official Store,CN
+156,Garnier Authorised,IN
+157,Decathlon Official Store,SG
+158,Decathlon Authorised,IN
+159,Yonex Official Store,CN
+160,Yonex Authorised,CN
+161,Nivia Official Store,US
+162,Nivia Authorised,IN
+163,Cosco Official Store,AE
+164,Cosco Authorised,IN
+165,Lego Official Store,JP
+166,Lego Authorised,IN
+167,Mattel Official Store,US
+168,Mattel Authorised,IN
+169,Hasbro Official Store,AE
+170,Hasbro Authorised,IN
+171,Hot Wheels Official Store,IN
+172,Hot Wheels Authorised,GB
+173,Funskool Official Store,IN
+174,Funskool Authorised,SG
+175,MRF Official Store,IN
+176,MRF Authorised,IN
+177,Bridgestone Official Store,CN
+178,Bridgestone Authorised,CN
+179,Castrol Official Store,IN
+180,Castrol Authorised,SG
+181,Bosch Auto Official Store,CN
+182,Bosch Auto Authorised,CN
+183,Apple Tokyo Retail,IN
+184,Samsung Tokyo Retail,IN
+185,Xiaomi Bengaluru Retail,IN
+186,OnePlus Tokyo Retail,JP
+187,Sony SanFrancisco Retail,IN
+188,LG Dubai Retail,US
+189,Philips Hyderabad Retail,GB
+190,Panasonic Hyderabad Retail,IN
+191,TCL SanFrancisco Retail,IN
+192,Vivo Mumbai Retail,IN
+193,Oppo Ahmedabad Retail,IN
+194,Realme Dubai Retail,IN
+195,Motorola Pune Retail,JP
+196,Nokia London Retail,IN
+197,Google Tokyo Retail,JP
+198,Dell Delhi Retail,US
+199,HP Dubai Retail,AE
+200,Lenovo Pune Retail,SG
+201,Asus Kolkata Retail,SG
+202,Acer Pune Retail,GB
+203,MSI Seoul Retail,IN
+204,Razer Chennai Retail,IN
+205,Gigabyte Mumbai Retail,IN
+206,Logitech Mumbai Retail,IN
+207,Microsoft Pune Retail,US
+208,AmazonBasics Hyderabad Retail,IN
+209,Anker Chennai Retail,CN
+210,Canon Singapore Retail,IN
+211,Nikon Delhi Retail,IN
+212,GoPro Mumbai Retail,IN
+213,Bose Kolkata Retail,CN
+214,JBL NewYork Retail,IN
+215,Sennheiser Berlin Retail,IN
+216,Boat Mumbai Retail,JP
+217,Beats SanFrancisco Retail,JP
+218,Skullcandy Delhi Retail,SG
+219,Corsair Singapore Retail,US
+220,Kingston NewYork Retail,IN
+221,SanDisk Berlin Retail,JP
+222,Seagate Hyderabad Retail,SG
+223,Western Digital London Retail,SG
+224,TP-Link Singapore Retail,IN
+225,Netgear London Retail,CN
+226,D-Link SanFrancisco Retail,AE
+227,NVIDIA Chennai Retail,CN
+228,AMD London Retail,US
+229,Intel London Retail,CN
+230,Bosch Seoul Retail,US
+231,Whirlpool Seoul Retail,US
+232,IFB Pune Retail,CN
+233,Haier Pune Retail,IN
+234,Voltas London Retail,GB
+235,Blue Star SanFrancisco Retail,CN
+236,Crompton Seoul Retail,IN
+237,Havells Chennai Retail,GB
+238,Dyson Seoul Retail,IN
+239,iRobot Singapore Retail,SG
+240,Usha Pune Retail,IN
+241,Prestige Pune Retail,IN
+242,Hawkins Chennai Retail,CN
+243,Pigeon SanFrancisco Retail,IN
+244,Philips Kitchen Delhi Retail,CN
+245,Nike Kolkata Retail,AE
+246,Adidas Pune Retail,CN
+247,Puma Tokyo Retail,JP
+248,Reebok Chennai Retail,CN
+249,Levis Dubai Retail,GB
+250,H&M Kolkata Retail,IN
+251,Zara Ahmedabad Retail,JP
+252,Uniqlo Dubai Retail,IN
+253,Woodland Berlin Retail,IN
+254,Bata Dubai Retail,IN
+255,Loreal Seoul Retail,CN
+256,Nivea Bengaluru Retail,IN
+257,Lakme Dubai Retail,IN
+258,Himalaya Ahmedabad Retail,JP
+259,Dove Seoul Retail,DE
+260,Garnier Singapore Retail,SG
+261,Decathlon Kolkata Retail,SG
+262,Yonex Pune Retail,DE
+263,Nivia Berlin Retail,CN
+264,Cosco Bengaluru Retail,IN
+265,Lego Singapore Retail,IN
+266,Mattel Mumbai Retail,SG
+267,Hasbro Bengaluru Retail,US
+268,Hot Wheels Berlin Retail,IN
+269,Funskool Chennai Retail,IN
+270,MRF Mumbai Retail,IN
+271,Bridgestone NewYork Retail,CN
+272,Castrol Bengaluru Retail,CN
+273,Bosch Auto Mumbai Retail,GB
+274,Dell Ahmedabad Warehouse,CN
+275,Zara SanFrancisco Trading,IN
+276,SanDisk NewYork Outlet,US
+277,Hawkins Tokyo Marketplace,GB
+278,Puma SanFrancisco Marketplace,IN
+279,Motorola Pune Prime Seller,US
+280,Puma Mumbai Authorised,IN
+281,Dyson Seoul Trading,IN
+282,Castrol Tokyo Trading,CN
+283,Lakme SanFrancisco Outlet,CN
+284,Razer Bengaluru Official Store,IN
+285,Himalaya Tokyo Distributors,SG
+286,Skullcandy Hyderabad Distributors,DE
+287,Panasonic Dubai Warehouse,CN
+288,Crompton NewYork Official Store,DE
+289,Yonex Pune Distributors,IN
+290,Kingston Dubai Prime Seller,IN
+291,Bata Berlin Authorised,DE
+292,Voltas NewYork Warehouse,CN
+293,Woodland Dubai Outlet,US
+294,Microsoft Pune Warehouse,SG
+295,Gigabyte Delhi Trading,SG
+296,Philips Kolkata Retail,SG
+297,Microsoft NewYork Retail,IN
+298,Bata SanFrancisco Distributors,SG
+299,Yonex Berlin Prime Seller,IN
+300,AmazonBasics Ahmedabad Marketplace,IN
+301,Nokia Hyderabad Warehouse,IN
+302,Dove Hyderabad Official Store,JP
+303,Philips Kitchen Chennai Marketplace,CN
+304,SanDisk Chennai Marketplace,IN
+305,AMD Kolkata Trading,JP
+306,Netgear Singapore Distributors,CN
+307,Western Digital Chennai Trading,DE
+308,Philips Kitchen Pune Outlet,JP
+309,Hasbro Berlin Distributors,AE
+310,TCL Berlin Distributors,US
+311,Beats Tokyo Prime Seller,DE
+312,Decathlon Singapore Distributors,DE
+313,Canon London Authorised,IN
+314,Oppo Chennai Trading,IN
+315,Intel Seoul Marketplace,IN
+316,Reebok Chennai Authorised,CN
+317,Funskool SanFrancisco Marketplace,IN
+318,Bosch Auto London Official Store,IN
+319,Philips Kitchen Kolkata Outlet,IN
+320,Seagate Mumbai Distributors,CN
+321,Hasbro Chennai Trading,CN
+322,Intel NewYork Official Store,DE
+323,Crompton London Official Store,DE
+324,Nike Mumbai Outlet,GB
+325,NVIDIA London Official Store,IN
+326,Seagate Bengaluru Outlet,AE
+327,Corsair Berlin Outlet,IN
+328,D-Link Chennai Warehouse,IN
+329,Sennheiser Chennai Retail,IN
+330,AMD Bengaluru Distributors,IN
+331,Garnier Mumbai Marketplace,IN
+332,Funskool Ahmedabad Trading,SG
+333,Acer Kolkata Authorised,US
+334,Levis Pune Trading,IN
+335,Bridgestone Pune Marketplace,JP
+336,Oppo Kolkata Distributors,IN
+337,Bata London Official Store,IN
+338,Lenovo SanFrancisco Trading,IN
+339,MSI SanFrancisco Marketplace,US
+340,Himalaya London Warehouse,IN
+341,Oppo Bengaluru Warehouse,US
+342,SanDisk Delhi Prime Seller,IN
+343,Voltas Ahmedabad Official Store,CN
+344,Castrol Ahmedabad Outlet,IN
+345,NVIDIA Ahmedabad Trading,JP
+346,Bose Tokyo Official Store,IN
+347,Yonex Pune Distributors,SG
+348,IFB SanFrancisco Trading,CN
+349,Nivia Ahmedabad Outlet,CN
+350,Asus NewYork Retail,IN
+351,Samsung Tokyo Prime Seller,IN
+352,TCL Mumbai Trading,US
+353,Pigeon Hyderabad Distributors,US
+354,TP-Link Chennai Trading,US
+355,Bosch Berlin Retail,IN
+356,Hawkins Singapore Distributors,IN
+357,Kingston Singapore Distributors,US
+358,Garnier NewYork Distributors,AE
+359,MRF NewYork Official Store,US
+360,JBL Tokyo Outlet,CN
+361,Motorola Tokyo Marketplace,US
+362,Nokia Singapore Distributors,IN
+363,Voltas Dubai Authorised,SG
+364,Canon Seoul Warehouse,IN
+365,Philips Kitchen Kolkata Trading,IN
+366,Bosch NewYork Marketplace,JP
+367,Voltas Mumbai Distributors,IN
+368,Google NewYork Prime Seller,DE
+369,TCL Pune Prime Seller,IN
+370,IFB Tokyo Retail,IN
+371,Boat Bengaluru Distributors,IN
+372,Pigeon Pune Marketplace,CN
+373,Hawkins Seoul Prime Seller,GB
+374,Hot Wheels Berlin Authorised,JP
+375,TP-Link Tokyo Distributors,IN
+376,Anker Kolkata Distributors,IN
+377,Netgear NewYork Official Store,US
+378,Boat Singapore Distributors,IN
+379,Bosch Berlin Trading,CN
+380,Lenovo London Outlet,CN
+381,Google Chennai Prime Seller,IN
+382,Nivia Ahmedabad Retail,DE
+383,D-Link Singapore Outlet,GB
+384,Corsair Chennai Retail,JP
+385,Uniqlo Bengaluru Marketplace,DE
+386,Bridgestone Dubai Outlet,US
+387,Prestige Ahmedabad Outlet,GB
+388,Dyson SanFrancisco Trading,US
+389,Oppo London Trading,US
+390,Samsung SanFrancisco Authorised,IN
+391,Nikon Hyderabad Retail,DE
+392,Hawkins London Warehouse,DE
+393,Nivea Delhi Distributors,IN
+394,Seagate Delhi Retail,IN
+395,Puma Ahmedabad Retail,IN
+396,Nivia Chennai Outlet,US
+397,Philips Kolkata Outlet,IN
+398,Bosch Chennai Warehouse,JP
+399,Corsair SanFrancisco Distributors,US
+400,Dyson SanFrancisco Warehouse,JP
+401,Netgear Kolkata Warehouse,GB
+402,Nikon Singapore Authorised,CN
+403,GoPro Delhi Prime Seller,IN
+404,Decathlon Mumbai Retail,IN
+405,Corsair Kolkata Retail,US
+406,Crompton Hyderabad Trading,SG
+407,MRF NewYork Prime Seller,CN
+408,Yonex SanFrancisco Official Store,IN
+409,Bose Chennai Authorised,CN
+410,Oppo Pune Authorised,CN
+411,MRF Bengaluru Warehouse,IN
+412,OnePlus Singapore Trading,CN
+413,Logitech SanFrancisco Prime Seller,IN
+414,Adidas Berlin Retail,CN
+415,Loreal Ahmedabad Prime Seller,IN
+416,GoPro Pune Official Store,IN
+417,Gigabyte Ahmedabad Outlet,SG
+418,D-Link London Official Store,US
+419,Voltas Delhi Retail,US
+420,D-Link Singapore Prime Seller,IN
+421,Sony Chennai Authorised,IN
+422,JBL Seoul Trading,US
+423,Boat Seoul Retail,IN
+424,Realme Berlin Prime Seller,DE
+425,Acer Dubai Distributors,SG
+426,Vivo Dubai Warehouse,IN
+427,Haier Bengaluru Authorised,IN
+428,Google Mumbai Authorised,IN
+429,Whirlpool Singapore Trading,SG
+430,Sennheiser Pune Warehouse,GB
+431,SanDisk Chennai Marketplace,IN
+432,Acer Delhi Retail,IN
+433,Skullcandy Seoul Retail,IN
+434,Apple NewYork Authorised,IN
+435,Himalaya NewYork Authorised,IN
+436,Levis Dubai Official Store,US
+437,Funskool Pune Distributors,IN
+438,Acer Dubai Marketplace,IN
+439,Bosch Mumbai Trading,CN
+440,TP-Link Kolkata Marketplace,CN
+441,Himalaya Kolkata Prime Seller,AE
+442,IFB Berlin Outlet,IN
+443,Hasbro Delhi Official Store,IN
+444,Netgear Seoul Trading,DE
+445,SanDisk SanFrancisco Retail,IN
+446,Intel Delhi Marketplace,GB
+447,Adidas Singapore Trading,IN
+448,Bose Singapore Outlet,SG
+449,Nivea Hyderabad Prime Seller,IN
+450,Philips Kitchen Pune Prime Seller,IN
+451,Cosco Tokyo Trading,IN
+452,Himalaya Pune Warehouse,IN
+453,Bose Mumbai Trading,GB
+454,Nokia Mumbai Distributors,IN
+455,HP Dubai Trading,IN
+456,Bosch Auto SanFrancisco Retail,CN
+457,Adidas Dubai Official Store,DE
+458,Nivia Tokyo Prime Seller,IN
+459,Nike London Marketplace,IN
+460,Castrol Chennai Warehouse,IN
+461,Philips Ahmedabad Trading,US
+462,Microsoft London Trading,US
+463,Hasbro Chennai Marketplace,US
+464,Lakme Dubai Authorised,CN
+465,Levis Hyderabad Official Store,JP
+466,Bridgestone London Outlet,SG
+467,Zara Pune Distributors,IN
+468,Reebok Mumbai Official Store,JP
+469,JBL Chennai Retail,JP
+470,Nike Seoul Authorised,US
+471,Sony Mumbai Warehouse,IN
+472,Nike Dubai Retail,JP
+473,Nokia Berlin Outlet,IN
+474,Logitech Dubai Outlet,CN
+475,D-Link Bengaluru Trading,US
+476,Dell Dubai Outlet,CN
+477,Sennheiser SanFrancisco Marketplace,IN
+478,HP Delhi Outlet,CN
+479,Puma Bengaluru Official Store,IN
+480,Crompton London Outlet,IN
+481,Bose Tokyo Official Store,CN
+482,Realme Delhi Outlet,IN
+483,Nivea Bengaluru Marketplace,CN
+484,Zara Mumbai Marketplace,SG
+485,Cosco Berlin Marketplace,SG
+486,Acer NewYork Official Store,DE
+487,SanDisk Seoul Prime Seller,GB
+488,AmazonBasics Kolkata Warehouse,IN
+489,Bridgestone Bengaluru Marketplace,SG
+490,iRobot Pune Trading,DE
+491,JBL Chennai Marketplace,US
+492,Lakme Chennai Official Store,CN
+493,Hot Wheels Ahmedabad Outlet,DE
+494,Western Digital NewYork Marketplace,IN
+495,Gigabyte SanFrancisco Warehouse,IN
+496,Lakme Mumbai Prime Seller,IN
+497,Lego Pune Marketplace,US
+498,Hawkins Chennai Trading,US
+499,Vivo Seoul Distributors,GB
+500,Samsung NewYork Outlet,CN

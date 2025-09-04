@@ -1,0 +1,193 @@
+table vw_fact_order_items_clean
+	lineageTag: e942027f-e4f7-4aad-8d5a-f26bdb52574e
+
+	refreshPolicy
+		policyType: basic
+		rollingWindowGranularity: year
+		rollingWindowPeriods: 5
+		incrementalGranularity: day
+		incrementalPeriods: 15
+		incrementalPeriodsOffset: -1
+		pollingExpression = let Maxorder_day = List.Max(vw_fact_order_items_clean[order_day]), accountForNull = if Maxorder_day = null then #datetime(1901, 01, 01, 00, 00, 00) else Maxorder_day in accountForNull
+		sourceExpression =
+			let
+			    Source = Sql.Databases("sqlecom-siddhant.database.windows.net"),
+			    ecom_dev = Source{[Name="ecom_dev"]}[Data],
+			    dbo_vw_fact_order_items_clean = ecom_dev{[Schema="dbo", Item="vw_fact_order_items_clean"]}[Data],
+			
+			    // optional: keep if you want these gone (folds fine)
+			    #"Removed Columns" = Table.RemoveColumns(dbo_vw_fact_order_items_clean, {"discount", "tax"}),
+			
+			    // make sure the partition column is DateTime BEFORE filtering
+			    #"Changed Type - order_day" =
+			        Table.TransformColumnTypes(#"Removed Columns", {{"order_day", type datetime}}),
+			
+			    // incremental filter (exclusive upper bound)
+			    #"Filtered Rows - Incremental" =
+			        Table.SelectRows(#"Changed Type - order_day", each
+			            [order_day] >= DateTime.From(RangeStart) and
+			            [order_day] <  DateTime.From(RangeEnd)),
+			    #"Filtered Rows" = Table.SelectRows(#"Filtered Rows - Incremental", each [order_day] >= RangeStart and [order_day] < RangeEnd)
+			in
+			    #"Filtered Rows"
+
+	column order_item_id
+		dataType: int64
+		isNullable: false
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: afb34e8e-4a33-49e8-b6ce-a9817783f4d0
+		summarizeBy: sum
+		sourceColumn: order_item_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_id
+		dataType: int64
+		isNullable: false
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 7fb969e3-682d-45d6-a30f-178881aa3475
+		summarizeBy: sum
+		sourceColumn: order_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_day
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 0fea243a-ff8e-4808-a359-9f0bafc2d19a
+		summarizeBy: none
+		sourceColumn: order_day
+
+		annotation SummarizationSetBy = Automatic
+
+	column customer_id
+		dataType: int64
+		isNullable: false
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: c583a040-b545-4720-805f-23e9d95dc80b
+		summarizeBy: none
+		sourceColumn: customer_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column shipping_region
+		dataType: string
+		isNullable: false
+		sourceProviderType: nvarchar(50)
+		lineageTag: 5f8c0546-a086-493c-a829-9b0414d49d7f
+		summarizeBy: none
+		sourceColumn: shipping_region
+
+		annotation SummarizationSetBy = Automatic
+
+	column product_id
+		dataType: int64
+		isNullable: false
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: ccb5916a-e421-4aee-92b6-91c2c096b1e9
+		summarizeBy: none
+		sourceColumn: product_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column quantity
+		dataType: int64
+		isNullable: false
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: b8e03cc1-cb7e-41ef-a648-524d689f756b
+		summarizeBy: sum
+		sourceColumn: quantity
+
+		annotation SummarizationSetBy = Automatic
+
+	column unit_price
+		dataType: double
+		isNullable: false
+		sourceProviderType: decimal(18, 2)
+		lineageTag: d5d2e725-77e8-4e7f-b5d7-78ffe1ebadf7
+		summarizeBy: sum
+		sourceColumn: unit_price
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column discount_amount
+		dataType: double
+		sourceProviderType: decimal(18, 2)
+		lineageTag: 6b132961-ac9b-4fff-9c47-b7cc0965e873
+		summarizeBy: sum
+		sourceColumn: discount_amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column net_sales
+		dataType: double
+		sourceProviderType: decimal(30, 2)
+		lineageTag: 11dd2ab4-62d7-440e-9c41-3f52ba43ce26
+		summarizeBy: sum
+		sourceColumn: net_sales
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column list_amount
+		dataType: double
+		sourceProviderType: decimal(30, 2)
+		lineageTag: 77d63f58-dfff-4ba3-bfde-cad5fa756f59
+		summarizeBy: sum
+		sourceColumn: list_amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column net_with_tax
+		dataType: double
+		sourceProviderType: decimal(31, 2)
+		lineageTag: c07f4ae3-feb4-4094-b5b8-66efa1f55d0d
+		summarizeBy: sum
+		sourceColumn: net_with_tax
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition vw_fact_order_items_clean = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Databases("sqlecom-siddhant.database.windows.net"),
+				    ecom_dev = Source{[Name="ecom_dev"]}[Data],
+				    dbo_vw_fact_order_items_clean = ecom_dev{[Schema="dbo", Item="vw_fact_order_items_clean"]}[Data],
+				
+				    // optional: keep if you want these gone (folds fine)
+				    #"Removed Columns" = Table.RemoveColumns(dbo_vw_fact_order_items_clean, {"discount", "tax"}),
+				
+				    // make sure the partition column is DateTime BEFORE filtering
+				    #"Changed Type - order_day" =
+				        Table.TransformColumnTypes(#"Removed Columns", {{"order_day", type datetime}}),
+				
+				    // incremental filter (exclusive upper bound)
+				    #"Filtered Rows - Incremental" =
+				        Table.SelectRows(#"Changed Type - order_day", each
+				            [order_day] >= DateTime.From(RangeStart) and
+				            [order_day] <  DateTime.From(RangeEnd)),
+				    #"Filtered Rows" = Table.SelectRows(#"Filtered Rows - Incremental", each [order_day] >= RangeStart and [order_day] < RangeEnd)
+				in
+				    #"Filtered Rows"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_IsMQueryFoldable = True
+

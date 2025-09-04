@@ -1,0 +1,31 @@
+relationship 30e1c6b9-e123-d81b-e8d9-10c7afd9dbf3
+	fromColumn: vw_fact_returns_clean.product_id
+	toColumn: vw_dim_products.product_id
+
+relationship 83c7ed8d-060d-dc01-36be-d586fa6a8b61
+	fromColumn: vw_fact_order_items_clean.customer_id
+	toColumn: vw_dim_customer.customer_key
+
+relationship 74d0b224-a6e6-1284-adaf-4abdd86c75d8
+	fromColumn: vw_fact_order_items_clean.product_id
+	toColumn: vw_dim_products.product_id
+
+relationship 83ee85f2-43c1-230f-0bc4-f24a6556403c
+	isActive: false
+	fromColumn: vw_fact_returns_clean.return_day
+	toColumn: Date.Date
+
+relationship 72119a07-d213-1d05-ced1-0d1d36bb0384
+	fromColumn: vw_fact_order_items_clean.order_day
+	toColumn: Date.Date
+
+relationship 5e24a55f-b65c-5711-88ea-8fa0d6d35b01
+	fromColumn: vw_dim_customer.region
+	toColumn: Dim_Region.region
+
+relationship 72fb1a0b-c13b-e704-29d2-b730ee86fff1
+	crossFilteringBehavior: bothDirections
+	securityFilteringBehavior: bothDirections
+	fromColumn: Append1.Region
+	toColumn: Dim_Region.region
+

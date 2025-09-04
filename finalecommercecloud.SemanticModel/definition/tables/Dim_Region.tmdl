@@ -1,0 +1,17 @@
+table Dim_Region
+	lineageTag: eac57a95-cb07-4993-9f2f-b3f59094de4e
+
+	column region
+		lineageTag: 23a0cb90-f7f1-4133-a99a-4c720ad42602
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: vw_dim_customer[region]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Dim_Region = calculated
+		mode: import
+		source = DISTINCT(vw_dim_customer[region])
+
+	annotation PBI_Id = fb38a7067d6844898d31b827e8486907
+

@@ -1,0 +1,332 @@
+table MeasureTable
+	lineageTag: c3224dc2-36cb-4151-883e-5be8ac399437
+
+	measure Total_Sales = SUM(vw_fact_order_items_clean[net_sales])
+		lineageTag: 6286013b-5efb-484f-a1af-9c6c0a058ae0
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Units_Sold = SUM(vw_fact_order_items_clean[quantity])
+		formatString: 0
+		lineageTag: 3a996756-b20e-40a8-a66a-8c5b2e6faa3a
+
+	measure Orders = DISTINCTCOUNT(vw_fact_order_items_clean[order_id])
+		formatString: 0
+		lineageTag: 8f0ef88f-1600-4d93-b7d6-2ccd7f4024df
+
+	measure Total_Refund_Amount = CALCULATE(SUM(vw_fact_returns_clean[refund_amount]),USERELATIONSHIP('Date'[Date],vw_fact_returns_clean[return_day]))
+		lineageTag: 9790ce5b-8ac2-4d53-96a0-a948b390ab6d
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure RefundRate = DIVIDE([Total_Refund_Amount],[Total_Sales],0)
+		lineageTag: a22c86f6-a85e-4aae-a43b-a4a6442dba36
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure AOV = DIVIDE([Total_Sales],[Orders],0)
+		lineageTag: ef784625-ee35-4353-824e-b983430cf880
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Discount_Amount = SUM(vw_fact_order_items_clean[discount_amount])
+		lineageTag: d6e590fd-fd1c-46b0-8ab5-1e7ba44b58e9
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Total_Return_units =
+			CALCULATE(
+			    SUM('vw_fact_returns_clean'[qty_returned]),
+			    USERELATIONSHIP('Date'[Date], vw_fact_returns_clean[return_day])
+			)
+		formatString: 0
+		lineageTag: b3137f84-e5d4-4bfe-88d4-c723990afe6d
+
+	measure 'Last Sales Date' = ```
+			
+			CALCULATE (
+			    MAX ( 'Date'[Date] ),
+			    FILTER ( ALL ( 'Date' ), [Total_Sales] > 0 )
+			)
+			
+			```
+		formatString: General Date
+		lineageTag: c4517acb-3eae-4eda-af95-35c03a0c50ac
+
+	measure totalmtd = TOTALMTD([Total_Sales],'Date'[Date])
+		lineageTag: b9284621-912e-4006-afc8-dd1465dbf0f8
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure SalesPM = CALCULATE([Total_Sales],PREVIOUSMONTH('Date'[Date]))
+		lineageTag: 729b4e0e-077f-4fd3-8724-c726bb26c22e
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure MoM% = DIVIDE([Total_Sales]-[SalesPM],[SalesPM],0)
+		lineageTag: 87c1ccc1-b764-44a5-91cf-daca6a1c8daf
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure TotalYtd = CALCULATE([Total_Sales],DATESYTD('Date'[Date]))
+		lineageTag: 89d31633-a75c-4a06-a031-cedfe2cbd89d
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure PreviousYearytd = CALCULATE([TotalYtd],SAMEPERIODLASTYEAR('Date'[Date]))
+		lineageTag: dd928b02-25c3-48e4-b935-e9f6b23a2158
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure YoY% = DIVIDE([TotalYtd]-[PreviousYearytd],[PreviousYearytd],0)
+		lineageTag: 6a9b125e-390b-40d1-90de-9f90d3664f44
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Total__Sales = CALCULATE(SUM(vw_fact_order_items_clean[net_sales]),ALL())
+		lineageTag: c620d5d3-86d0-4f2c-b259-1110537946c4
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure returnRate = DIVIDE([Total_Return_units],[Units_Sold],0)
+		lineageTag: aac26a15-63df-4dcc-b82e-813f38531ede
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Net Sales' = [Total__Sales]-[Discount_Amount]-[Total_Refund_Amount]
+		lineageTag: 6222e3e5-779c-4091-82c8-9675f25e59cd
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Refund Rate Rank' =
+			
+			RANKX(
+			    ALLSELECTED( vw_dim_products[category] ),
+			    [RefundRate],
+			    [RefundRate],
+			    DESC,
+			    DENSE
+			)
+		formatString: 0
+		lineageTag: 64ae538a-cbb3-4b1f-860b-d491af52a6b5
+
+	measure 'Refund Amount (Top5 by Rate)' =
+			
+			VAR r = [Refund Rate Rank]
+			RETURN IF( NOT ISBLANK(r) && r <= 5, [Total_Refund_Amount], BLANK() )
+		lineageTag: 7d831d12-ff4a-4d21-b6a9-15888734bfa2
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'MoM % Color' =
+			
+			VAR v = [MoM%]
+			RETURN
+			SWITCH (
+			    TRUE(),
+			    ISBLANK(v), "#BDBDBD",   -- gray for blanks
+			    v > 0, "#2E7D32",        -- green for growth
+			    v < 0, "#C62828",        -- red for decline
+			    "#9E9E9E"                -- fallback
+			)
+		lineageTag: 1a589730-d8bf-4a62-80fb-338d17e8785d
+
+	measure BestMonth = CALCULATE(MAXX(VALUES('Date'[YearMonth]),[Total_Sales]))
+		lineageTag: bca6b7d3-1397-4b9d-96b5-92f7777a090c
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure WorstMonthName = CALCULATE(TOPN(1,VALUES('Date'[MonthName]),[Total_Sales],ASC),VALUES('Date'[MonthName]))
+		lineageTag: 1e8e1eca-08d6-49a5-9840-c7db72dfaa90
+
+	measure BestMonthSales = CALCULATE(MAXX(VALUES('Date'[MonthName]),[Total_Sales]))
+		lineageTag: 8bf17875-cc5a-49d6-a089-92dacaef822f
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure BestMonthName = CALCULATE(TOPN(1,VALUES('Date'[MonthName]),[Total_Sales],DESC),VALUES('Date'[MonthName]))
+		lineageTag: d163e9f1-1a5e-47ea-8f1b-dab742f660cd
+
+	measure WorstMonthSales = CALCULATE(MINX(VALUES('Date'[Month]) ,[Total_Sales]))
+		lineageTag: 2a6eb1a4-7680-4a21-a7ea-39037a17b4d7
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Sales Rolling 3M' =
+			
+			VAR Window2 =
+			    DATESINPERIOD ( 'Date'[Date], MAX ( 'Date'[Date] ), -3, MONTH )
+			RETURN
+			AVERAGEX ( Window2, [Total_Sales] )
+		lineageTag: 429b7882-5fb4-479b-bc30-b1d84d5e848f
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure TotalCustomers = DISTINCTCOUNT(vw_dim_customer[customer_key])
+		formatString: 0
+		lineageTag: 39767f09-e827-4203-9ad3-4837d015748f
+
+	measure 'Active Customers3M' =
+			
+			VAR LastDate1 = MAX ( 'Date'[Date] )
+			RETURN
+			CALCULATE (
+			    DISTINCTCOUNT ( vw_fact_order_items_clean[customer_id]),
+			    DATESINPERIOD ( 'Date'[Date], LastDate1, -3, MONTH )
+			)
+		formatString: 0
+		lineageTag: 1d86775c-88fc-498b-9f64-82147d8ad98d
+
+	measure RepeatCustomers(>2) =
+			
+			
+			CALCULATE(
+			    DISTINCTCOUNT(vw_fact_order_items_clean[customer_id]),FILTER(VALUES(vw_fact_order_items_clean[order_id]),CALCULATE(COUNTROWS(vw_fact_order_items_clean))>2))
+		formatString: 0
+		lineageTag: e4f84898-a7f5-407c-aed8-72f65fb5b144
+
+	measure RepeatRate% = DIVIDE([RepeatCustomers(>2)],120000,0)
+		lineageTag: 3adfd121-b50a-4207-84ed-470496905331
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure ChurnRate =
+			
+			var maxxx=120000
+			var active=[Active Customers3M]
+			
+			RETURN
+			maxxx-active
+		formatString: 0
+		lineageTag: ca9544cf-d42b-47fe-9ba7-af1a820bcf33
+
+	measure ACV = DIVIDE([Total_Sales],DISTINCTCOUNT(vw_fact_order_items_clean[customer_id]),0)
+		lineageTag: e3339456-c09c-48e1-b510-3484da6cdaec
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'New v/s repeat'
+		lineageTag: f5bc7c31-9ba9-4526-b910-53ed436fca7f
+
+	measure Lastorderdate = CALCULATE(MAX(vw_fact_order_items_clean[order_day]),ALLEXCEPT(vw_fact_order_items_clean,vw_fact_order_items_clean[customer_id]))
+		formatString: General Date
+		lineageTag: fbd6b289-edd4-4f78-8d5c-a7ba2b5bbff4
+
+	measure 'Frequency (Order Count)' =
+			
+			VAR CustID =
+			    SELECTEDVALUE ( vw_dim_customer[customer_key] )  -- <-- use the same table/column as your matrix row
+			RETURN
+			IF (
+			    ISBLANK ( CustID ),
+			    BLANK (),
+			    CALCULATE (
+			        DISTINCTCOUNT ( vw_fact_order_items_clean[order_id] ),
+			        KEEPFILTERS ( vw_fact_order_items_clean[customer_id] = CustID )   -- hard filter Orders to this customer
+			    )
+			)
+		formatString: 0
+		lineageTag: c25f1c3c-6150-4628-a258-5ba071ee7c5d
+
+	measure 'Monetary (Lifetime Spend)' =
+			
+			CALCULATE(
+			    [Total__Sales],
+			    ALLEXCEPT( vw_dim_customer, vw_dim_customer[customer_key] )
+			)
+		lineageTag: 3c33bb99-32a4-4abf-ad9b-108f0b0ac0c1
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure MaxReturnDays = MAX(vw_fact_returns_clean[days_to_return])
+		formatString: 0
+		lineageTag: 8281514a-0618-48c6-91d3-066f98258899
+
+	measure TotalProductsSold = DISTINCTCOUNT(vw_fact_order_items_clean[product_id])
+		formatString: 0
+		lineageTag: 1306ae6c-78d5-4ce2-bed5-a237f66a488f
+
+	measure TopCategoryBySales = TOPN(1,VALUES(vw_dim_products[category]),[Total_Sales],DESC)
+		lineageTag: 05205a20-33e9-4748-b93a-acecfc2b22d7
+
+	measure TopSubCategoryBySales = TOPN(1,VALUES(vw_dim_products[subcategory]),[Total_Sales],DESC)
+		lineageTag: be2d79d5-1fe4-43b4-9b1e-c7e5e50cf9bd
+
+	measure TopProductByRevenue = TOPN(1,VALUES(vw_dim_products[product_name]),[Total_Sales],DESC)
+		lineageTag: e04ac66e-9d97-4949-aa57-364b392fbc94
+
+	measure AverageSellingPrice = DIVIDE([Total_Sales],[Units_Sold])
+		lineageTag: 13ecf0ca-469c-4207-a001-16e0abf29e10
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Top Product Sales' =
+			
+			VAR TopProdID =
+			    MAXX (
+			        TOPN ( 1, VALUES ( vw_dim_products[product_id]), [Total_Sales], DESC ),
+			        vw_dim_products[product_id]
+			    )
+			RETURN
+			CALCULATE ( [Total_Sales], KEEPFILTERS ( vw_dim_products[product_id] = TopProdID ) )
+		lineageTag: 00570fd5-28b0-4636-9aa9-e72a75a58e91
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure TopSubCategoryByRevenue = ```
+			
+			var top1=TOPN(1,VALUES(vw_dim_products[subcategory]),[Total_Sales],DESC)
+			RETURN
+			CALCULATE([Total_Sales],KEEPFILTERS(vw_dim_products[subcategory]=top1))
+			
+			```
+		lineageTag: 14dab60d-45d0-4754-a9fb-374eb4886480
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure RankProductsBySales = RANKX(ALLSELECTED(vw_dim_products[product_id]),[Total_Sales],,DESC,Dense)
+		formatString: 0
+		lineageTag: 1821e1c0-ff16-40f9-9d77-43fc520513a8
+
+	measure CumulativeSales =
+			
+			var k=[RankProductsBySales]
+			RETURN
+			CALCULATE(
+			    [Total_Sales],FILTER(ALLSELECTED(vw_dim_products[product_id]),[RankProductsBySales]<=k))
+		lineageTag: 4878cad5-4762-4e88-9199-12ae2d78de60
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure CumulativeSales% = DIVIDE([CumulativeSales],[Total_Sales])
+		lineageTag: 01504abe-2688-4b03-8df7-5e920145401f
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure TopCategoryByRevenue = ```
+			
+			var t= TOPN(1,VALUES(vw_dim_products[category]),[Total_Sales],DESC)
+			return 
+			CALCULATE([Total_Sales],vw_dim_products[category]=t)
+			```
+		lineageTag: 8141a460-ef4e-4ab5-9082-24aef3227eac
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'who i am' = USERPRINCIPALNAME()
+		lineageTag: 7945281c-e8ff-46b6-bb19-b21a4b060ccc
+
+	column Measurre
+		lineageTag: 4a16d8af-6660-4482-b7a0-80c7736d60d9
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Measurre]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition MeasureTable = calculated
+		mode: import
+		source = DATATABLE("Measurre",STRING, {{ "Dummy" }})
+
+	annotation PBI_Id = eaa216a84a6b4e609e431d5a95a62dc0
+

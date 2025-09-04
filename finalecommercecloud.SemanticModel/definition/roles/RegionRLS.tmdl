@@ -1,0 +1,7 @@
+role RegionRLS
+	modelPermission: read
+
+	tablePermission Append1 = USERPRINCIPALNAME()=Append1[UPN]
+
+	annotation PBI_Id = 79d5fea4adcc44a8883628e23dabc7e8
+

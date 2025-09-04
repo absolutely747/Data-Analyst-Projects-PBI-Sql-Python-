@@ -1,0 +1,83 @@
+table vw_dim_products
+	lineageTag: accbc8e8-fa22-41f6-b278-ad9bc10706f0
+
+	column product_id
+		dataType: int64
+		isNullable: false
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: a1526d5d-8974-4ad3-b3cd-7d9167326af7
+		summarizeBy: none
+		sourceColumn: product_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column product_name
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 8c394c91-88d4-46df-a9c0-ea35894f27f1
+		summarizeBy: none
+		sourceColumn: product_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column category
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 3f6bc6b8-9432-4649-9cb5-262b3a27c0fe
+		summarizeBy: none
+		sourceColumn: category
+
+		annotation SummarizationSetBy = Automatic
+
+	column subcategory
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 290fd2e0-2fcc-4986-aa9a-dedb8306cefc
+		summarizeBy: none
+		sourceColumn: subcategory
+
+		annotation SummarizationSetBy = Automatic
+
+	column vendor_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 54f13aa3-9ebb-4a68-b7b7-033b640e3eeb
+		summarizeBy: sum
+		sourceColumn: vendor_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column vendor_name
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: e731e0f1-0030-47ef-8b1b-311a3a1b9680
+		summarizeBy: none
+		sourceColumn: vendor_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column vendor_country
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 2bce4651-2075-4d46-bc14-9b23b5ee1ff3
+		summarizeBy: none
+		sourceColumn: vendor_country
+
+		annotation SummarizationSetBy = Automatic
+
+	partition vw_dim_products = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Databases("sqlecom-siddhant.database.windows.net"),
+				    ecom_dev = Source{[Name="ecom_dev"]}[Data],
+				    dbo_vw_dim_products = ecom_dev{[Schema="dbo",Item="vw_dim_products"]}[Data]
+				in
+				    dbo_vw_dim_products
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
