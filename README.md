@@ -111,3 +111,80 @@ Publish to Dev → promote via pipeline (see docs/DEPLOYMENT.md when added)
 Sample project for learning/portfolio purposes.
 
 
+# Business Problem & Solution Narrative
+
+## Context
+A mid-size ecommerce business wants to **grow revenue**, **reduce refunds**, and **retain customers**. Leadership needs a single, trustworthy view aligned to the **fiscal year (April–March)** that different teams (Sales, Category, Ops, Finance, Regional leaders, and Partners) can use securely.
+
+---
+
+## Objectives
+1. **Revenue & Growth:** Track Sales/Orders/Net Sales with clear **MTD/QTD/YTD**  and **YoY** comparisons.
+2. **Profit Protection:** Identify refund drivers and shrink the **refund cycle time** (return → refund).
+3. **Customer Retention:** Lift **repeat rate**, control **churn**, and improve **AOV/ACV**.
+4. **Product Focus:** Concentrate on winners via **Top-N** insights while still accounting for the long tail.
+5. **Regional Accountability & Secure Sharing:** Give each region only its data (**RLS**), and share externally without exposing (**OLS**).
+
+---
+
+## Core Questions
+- **Revenue Trend:** How are **Total Sales**, **Orders**, and **Net Sales** trending **MoM/YoY** in fiscal time?
+- **Drivers:** Which **categories/subcategories/products** lead or lag? Who are the **Top 5** at any time?
+- **Returns:** What are the **top return reasons**? Which **vendors/regions** contribute most? How many days from **return to refund**?
+- **Customers:** Are **unique** and **repeat** customers growing? What’s **Repeat Rate** and **Churn** trend? What’s our **AOV**/**ACV**?
+- **Regions:** How does each region (APAC/AMER/EMEA/LATAM) perform on these KPIs?
+
+---
+
+## Solution (What the Report Delivers)
+- **Star-schema** model (Facts: Orders, Returns; Dims: Date, Customer, Product, Region).
+- **Fiscal time intelligence** : MTD/QTD/YTD and YoY aligned to business calendar.
+- **Top-5 + Others** pattern to balance focus (leaders) with completeness (tail).
+- **Returns analytics**: reasons, vendor country mix, and **cycle time** (return days, refund days).
+- **Customer metrics**: Unique vs Repeat, **Repeat Rate**, **Churn** vs **ActiveCustomers3M**, **AOV**, **ACV**.
+- **Security**:
+  - **RLS** restricts users to their Region(s) using a UPN→Region mapping.
+  - **OLS** hides sensitive columns (e.g., MeasuredTable etc) for partner audiences.
+- **Operational reliability**:
+  - **Incremental Refresh** on facts (e.g., store 5 years; refresh last 7 days).
+  - **Deployment Pipelines** (Dev → Test → Prod) with stage-specific rules and credentials for safe promotion.
+
+---
+
+## Who Uses It & Decisions Enabled
+- **Head of Sales:** Steer targets by YTD vs PY; quickly spot surging or declining categories.
+- **Category Managers:** Double down on **Top-5** products; address underperformers; mitigate return-heavy SKUs.
+- **Operations/Quality:** Prioritize vendors/regions with high **return rates** and **long refund cycles**.
+- **Finance:** Reconcile **Net Sales** (Total − Refunds) by fiscal periods; monitor refund exposure.
+- **Regional Leaders & Partners:** Consume only their data. 
+
+---
+
+## Example Insights (from sample data)
+- **Refund spikes in late Q3** depress **Net Sales**; concentrated in **Electronics** and vendor countries **IN/CN**.
+- **Repeat Rate ~21%** while **Churn rises** as ActiveCustomers dip—signals the need for lifecycle/loyalty offers.
+- **Sony TWS Earbuds** leads revenue; the **Top-5 + Others** view confirms a meaningful long tail that still contributes.
+
+---
+
+## Success Criteria
+- < 3–5s typical page load; heavy pages aided by **Apply all slicers** and aggregations where needed.
+- Accurate  **MTD/QTD/YTD** and **YoY** across pages.
+- RLS/OLS verified: regional leaders see only their data.
+- Stable refresh with **Incremental Refresh**; partitions built successfully per environment.
+
+---
+
+## Scope & Assumptions
+- **Sample/synthetic data** (no real customer information).
+- Azure SQL views feed the model; all credentials and secrets are kept outside the repo.
+- Regional taxonomy: **APAC, AMER, EMEA, LATAM**.
+
+---
+
+## Next Steps
+- Add anomaly detection for sudden return spikes and automated vendor alerts.
+- Introduce **What-If** parameters.
+- Expand OLS personas.
+
+
